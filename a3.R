@@ -1,7 +1,11 @@
+install.packages("mlogit")
+install.packages("nnet")
 library(tidyverse)
 library(tidyr)
 library(dplyr)
 library(data.table)
+library(mlogit)
+library(nnet)
 
 getwd()
 setwd("/Users/liulu/Desktop/Data")
@@ -129,6 +133,8 @@ new_quality
 highest <- newdata2 %>% arrange(desc(score)) %>% slice(1:2000)
 
 # Exercise 5 First Model
+#1 Propose a model specification. Write the Likelihood function.
+m_data <-highest %>% select(V1,score,rankplace,schoolcode,code,choicepgm,scode_rev,pgm_rev,choice_rev)
+m_data %>% filter(schoolcode == "schoolcode1")
 
-                        
-                        
+
